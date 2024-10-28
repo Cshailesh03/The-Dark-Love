@@ -34,7 +34,7 @@ const PersonalityTest = () => {
         <p className="mb-8 text-gray-300 text-xl">
           Uncover the depths of your seductive potential with our exclusive personality test.
         </p>
-        <Button className="bg-red-600 text-white rounded-xl font-bold py-3 px-8 text-lg hover:bg-red-700">
+        <Button className="bg-red-600 text-white rounded-xl font-bold py-3 px-8 text-lg transform hover:scale-105 hover:shadow-lg hover:shadow-red-600/20 transition-all duration-300 rounded-lg overflow-hidden">
           Take the Test
           {/* <ArrowRight className="ml-2" /> */}
         </Button>

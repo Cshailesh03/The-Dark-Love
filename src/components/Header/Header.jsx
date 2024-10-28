@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../../assets/Logo.jpg'; // Import the logo
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,8 +17,9 @@ export default function Header() {
       <header className="bg-black text-white fixed top-0 left-0 w-full z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           {/* Logo on the left */}
-          <div className="text-2xl font-bold">
-            <Link to="/" className="text-red-500 hover:text-red-600">
+          <div className="flex items-center">
+            <img src={Logo} alt="Logo" className="h-10 mr-2" /> {/* Logo image with height */}
+            <Link to="/" className="text-2xl font-bold text-red-500 hover:text-red-600">
               The Dark Love
             </Link>
           </div>

@@ -92,7 +92,7 @@ export default function Explore() {
   return (
     <section
       id="areas"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-red-900"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-red-900 via-white to-red-900"
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center text-white">
@@ -102,7 +102,7 @@ export default function Explore() {
           {improvementAreas.map((area) => (
             <div
               key={area.id}
-              className="bg-black border border-red-600 hover:shadow-lg hover:shadow-red-600/20 transition-all duration-300 rounded-lg overflow-hidden"
+              className="bg-black border border-red-600 transform hover:scale-105 hover:shadow-lg hover:shadow-red-600/20 transition-all duration-300 rounded-lg overflow-hidden"
             >
               <div className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mb-4">

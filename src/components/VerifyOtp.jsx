@@ -38,8 +38,8 @@ function VerifyOTP() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-gray-900 border border-red-600 rounded-lg">
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-600 to-white text-white font-sans flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-gray-800 border border-red-600 rounded-lg">
         <div className="space-y-1 p-6 text-center">
           <h1 className="text-2xl font-bold text-white">Verify Your Email</h1>
           <p className="text-gray-400">We've sent a 6-digit code to your email address</p>

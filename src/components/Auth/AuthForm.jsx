@@ -1,7 +1,14 @@
 import React from 'react';
 import { Eye, EyeOff, Lock, Mail, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthForm = ({ activeTab, showPassword, setShowPassword }) => {
+  const navigate = useNavigate();
+
+  const handleOtpVerification = () => {
+    navigate('/verify-otp');
+  };
+
   return (
     <>
       {activeTab === 'login' && (
@@ -14,6 +21,7 @@ const AuthForm = ({ activeTab, showPassword, setShowPassword }) => {
               placeholder="m@example.com"
               icon={<Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />}
             />
+
             <FormField
               id="password-login"
               label="Password"
@@ -46,6 +54,16 @@ const AuthForm = ({ activeTab, showPassword, setShowPassword }) => {
               placeholder="m@example.com"
               icon={<Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />}
             />
+
+            {/* Verify OTP button */}
+            <button
+              type="button"
+              onClick={handleOtpVerification}
+              className="mt-1 ml-1 text-sm text-red-600 hover:text-red-700 underline"
+            >
+              Verify OTP
+            </button>
+                        
             <FormField
               id="password-register"
               label="Password"

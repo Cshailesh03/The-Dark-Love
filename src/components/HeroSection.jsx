@@ -15,10 +15,10 @@ export default function HeroSection() {
     <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-red-900 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center">
         {/* Left Section: Text */}
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 -mt-4 md:-mt-8">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white animate-bounce-in">
-            <span className="block text-10xl md:text-10xl mb-2 text-white">Unlock You</span>
-            <span className="text-red-600 ">Dark Charisma</span>
+            <span className="block text-10xl md:text-10xl mb-2 text-white">Unlock Your</span>
+            <span className="text-red-600">Dark Charisma</span>
           </h1>
           <p className="mt-3 max-w-md mx-auto md:mx-0 text-xl md:text-2xl text-gray-300 mb-8 animate-fade-in-up">
             Master the art of seduction and unleash your inner magnetism.

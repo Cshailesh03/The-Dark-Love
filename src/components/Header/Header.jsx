@@ -1,63 +1,71 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../assets/Logo.jpg'; // Import the logo
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [isScrolled, setIsScrolled] = useState(false); // Track scroll state
+  const navigate = useNavigate();
+
+  // Update scroll state based on page scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNavigation = (path) => {
-    setIsMobileMenuOpen(false); // Close mobile menu on navigation
-    navigate(path); // Navigate to the specified path
+    setIsMobileMenuOpen(false);
+    navigate(path);
   };
 
   return (
     <>
-      {/* Header with fixed position */}
-      <header className="bg-black text-white fixed top-0 left-0 w-full z-50">
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+          isScrolled ? 'bg-white bg-opacity-60 text-black' : 'bg-black text-white'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          {/* Logo on the left */}
-          <div className="flex items-center">
-            <img src={Logo} alt="Logo" className="h-10 mr-2" /> {/* Logo image with height */}
-            <Link to="/" className="text-2xl font-bold text-red-500 hover:text-red-600">
+          <div className="text-2xl font-bold">
+            <Link to="/" className={`${isScrolled ? 'text-black' : 'text-red-500 hover:text-red-600'}`}>
               The Dark Love
             </Link>
           </div>
 
-          {/* Desktop Navigation Links and CTA on the right */}
           <div className="hidden md:flex items-center space-x-6">
             <nav className="space-x-6">
-              <Link to="/" className="text-white hover:text-red-500">Home</Link>
-              <Link to="/about" className="text-white hover:text-red-500">About</Link>
-              <Link to="/services" className="text-white hover:text-red-500">Services</Link>
-              <Link to="/contact" className="text-white hover:text-red-500">Contact</Link>
+              <Link to="/" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>Home</Link>
+              <Link to="/about" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>About</Link>
+              <Link to="/services" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>Services</Link>
+              <Link to="/contact" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>Contact</Link>
             </nav>
 
-            {/* Call to Action for desktop */}
             <div>
-              <Link to="/login" className="bg-red-500 text-white rounded-xl px-4 py-2 hover:bg-red-600">
+              <Link to="/login" className={`rounded-xl px-4 py-2 transition-colors duration-300 ${isScrolled ? 'bg-red-500 text-white hover:bg-red-600' : 'bg-red-500 text-white hover:bg-red-600'}`}>
                 Get Started
               </Link>
             </div>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white focus:outline-none"
+              className="focus:outline-none"
               aria-label="Toggle mobile menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className={`w-6 h-6 ${isScrolled ? 'text-black' : 'text-white'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-black">
+          <div className={`${isScrolled ? 'bg-white' : 'bg-black'} md:hidden`}>
             <button onClick={() => handleNavigation('/')} className="block py-2 px-4 text-sm hover:bg-red-500">Home</button>
             <button onClick={() => handleNavigation('/about')} className="block py-2 px-4 text-sm hover:bg-red-500">About</button>
             <button onClick={() => handleNavigation('/services')} className="block py-2 px-4 text-sm hover:bg-red-500">Services</button>

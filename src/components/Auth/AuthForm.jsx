@@ -32,7 +32,7 @@ const AuthForm = ({ activeTab, showPassword, setShowPassword }) => {
             />
             <RoleSelection />
           </div>
-          <button className="w-full mt-6 bg-red-600 hover:bg-red-700 text-white py-2 rounded">
+          <button className="w-full mt-6 bg-red-500 hover:bg-red-700 text-white py-2 rounded">
             Login
           </button>
         </form>
@@ -59,7 +59,7 @@ const AuthForm = ({ activeTab, showPassword, setShowPassword }) => {
             <button
               type="button"
               onClick={handleOtpVerification}
-              className="mt-1 ml-1 text-sm text-red-600 hover:text-red-700 underline"
+              className="mt-1 ml-1 text-sm text-red-500 hover:text-red-700 underline"
             >
               Verify OTP
             </button>
@@ -74,7 +74,7 @@ const AuthForm = ({ activeTab, showPassword, setShowPassword }) => {
             />
             <RoleSelection />
           </div>
-          <button className="w-full mt-6 bg-red-600 hover:bg-red-700 text-white py-2 rounded">
+          <button className="w-full mt-6 bg-red-500 hover:bg-red-700 text-white py-2 rounded">
             Register
           </button>
         </form>

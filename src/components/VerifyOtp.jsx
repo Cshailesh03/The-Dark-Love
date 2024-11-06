@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import '../index.css';
 
 function VerifyOTP() {
   const [otp, setOtp] = useState(['', '', '', '', '', ''])
@@ -58,7 +59,7 @@ function VerifyOTP() {
                     maxLength={1}
                     value={data}
                     onChange={(e) => handleChange(e, index)}
-                    className="w-12 h-12 text-center text-2xl bg-gray-800 border border-red-600 text-white focus:border-red-400 focus:ring-red-400"
+                    className="otp-input w-12 h-12 text-center text-2xl bg-white border-b-2 border-gray-800 text-gray-800 focus:border-gray-600 focus:ring-0 transition-transform duration-150 ease-out"
                   />
                 ))}
               </div>

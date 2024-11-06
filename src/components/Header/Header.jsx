@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../../assets/Logo-remove.png';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // Track scroll state
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
-  // Update scroll state based on page scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -26,31 +26,48 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-          isScrolled ? 'bg-white bg-opacity-60 text-black' : 'bg-black text-white'
+          isScrolled ? 'bg-white bg-opacity-60 text-black shadow-md' : 'bg-black text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold">
-            <Link to="/" className={`${isScrolled ? 'text-black' : 'text-red-500 hover:text-red-600'}`}>
+          {/* Logo and Title */}
+          <div className="flex items-center space-x-3 text-2xl font-bold">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-10 w-10 object-contain"
+            />
+            <Link
+              to="/"
+              className={`${
+                isScrolled ? 'text-black' : 'text-red-500'
+              } hover:text-red-600 transition-colors duration-300`}
+              style={{
+                fontFamily: 'sans-serif',
+                letterSpacing: '0.05em',
+              }}
+            >
               The Dark Love
             </Link>
           </div>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             <nav className="space-x-6">
-              <Link to="/" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>Home</Link>
-              <Link to="/about" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>About</Link>
-              <Link to="/services" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>Services</Link>
-              <Link to="/contact" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'}`}>Contact</Link>
+              <Link to="/" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'} transition-colors duration-300`}>Home</Link>
+              <Link to="/about" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'} transition-colors duration-300`}>About</Link>
+              <Link to="/services" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'} transition-colors duration-300`}>Services</Link>
+              <Link to="/contact" className={`${isScrolled ? 'text-black' : 'text-white hover:text-red-500'} transition-colors duration-300`}>Contact</Link>
             </nav>
 
             <div>
-              <Link to="/login" className={`rounded-xl px-4 py-2 transition-colors duration-300 ${isScrolled ? 'bg-red-500 text-white hover:bg-red-600' : 'bg-red-500 text-white hover:bg-red-600'}`}>
+              <Link to="/login" className={`rounded-xl px-4 py-2 ${isScrolled ? 'bg-red-500 text-white' : 'bg-red-500 text-white hover:bg-red-600'} transition-colors duration-300`}>
                 Get Started
               </Link>
             </div>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -64,6 +81,7 @@ export default function Header() {
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className={`${isScrolled ? 'bg-white' : 'bg-black'} md:hidden`}>
             <button onClick={() => handleNavigation('/')} className="block py-2 px-4 text-sm hover:bg-red-500">Home</button>
@@ -75,8 +93,8 @@ export default function Header() {
         )}
       </header>
 
-      {/* Red Line Below Header */}
-      <div className="w-full h-px bg-red-500 mt-16"></div>
+      {/* Optional Red Line Below Header */}
+      {/* <div className="w-full h-px bg-red-500 mt-16"></div> */}
     </>
   );
 }

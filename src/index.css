@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+body {
+  @apply antialiased;
+}
 
 .text-10xl {
     font-size: 6rem; /* Adjust as needed */
@@ -68,5 +86,25 @@
   
   .text-shadow-glow {
     text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.4);
+  }
+
+  .otp-input {
+    transition: transform 0.2s ease;
+  }
+  
+  .otp-input:focus {
+    transform: scale(1.1); /* Slightly enlarges the input on focus */
+    border-bottom-color: #ff7f50; /* Optional color change */
+  }
+  
+  .otp-input:active {
+    animation: shake 0.3s ease; /* Adds a quick shake effect if input is clicked */
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
   }
   

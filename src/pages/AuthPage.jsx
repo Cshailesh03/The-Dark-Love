@@ -9,7 +9,7 @@ export default function AuthPage() {
   const [activeTab, setActiveTab] = useState('login');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-600 to-white text-black font-sans flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-b from-white vai-red-300 to-red-500 text-black font-sans flex items-center justify-center p-4">
       <div className="w-full max-w-md bg-gray-800 border-red-600 shadow-lg shadow-red-500/20 rounded-lg overflow-hidden">
         <AuthHeader />
         <div className="p-4">

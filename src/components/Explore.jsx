@@ -92,7 +92,7 @@ export default function Explore() {
   return (
     <section
       id="areas"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-red-900 via-white to-red-900"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-red-900"
     >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center text-white">

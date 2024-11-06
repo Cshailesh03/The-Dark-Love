@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from './pages/LandingPage.jsx';
 import AuthPage from './pages/AuthPage.jsx';
 import VerifyOTP from './components/VerifyOtp.jsx';
+import Question1 from './pages/Q&A.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:"/verify-otp",
         element:<VerifyOTP/>
+      },
+      {
+        path:"/Question",
+        element:<Question1/>
       }
 
     ]

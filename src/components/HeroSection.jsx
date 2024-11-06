@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-red-900 overflow-hidden">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black  overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center">
         {/* Left Section: Text */}
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 -mt-4 md:-mt-8">

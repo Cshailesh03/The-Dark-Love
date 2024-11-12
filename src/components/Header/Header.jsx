@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Logo from '../../assets/Logo-remove.png';
+// import { ReactComponent as RoseIcon } from '../../assets/rose.svg'; // testingggg
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,20 +30,17 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          {/* Logo and Title */}
-          <div className="flex items-center space-x-3 text-2xl font-bold">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="h-10 w-10 object-contain"
-            />
+          {/* Enhanced Logo and Title */}
+          <div className="flex items-center space-x-2 text-2xl font-bold">
+            {/* Replace RoseIcon with a placeholder */}
+            <div className="h-8 w-8 bg-red-500 rounded-full" /> {/* Temporary placeholder */}
             <Link
               to="/"
               className={`${
                 isScrolled ? 'text-black' : 'text-red-500'
               } hover:text-red-600 transition-colors duration-300`}
               style={{
-                fontFamily: 'sans-serif',
+                fontFamily: 'Bodoni MT, serif',
                 letterSpacing: '0.05em',
               }}
             >
@@ -92,9 +89,6 @@ export default function Header() {
           </div>
         )}
       </header>
-
-      {/* Optional Red Line Below Header */}
-      {/* <div className="w-full h-px bg-red-500 mt-16"></div> */}
     </>
   );
 }

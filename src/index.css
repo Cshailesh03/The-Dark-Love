@@ -107,4 +107,33 @@ body {
     50% { transform: translateX(3px); }
     75% { transform: translateX(-3px); }
   }
+
+  @layer base {
+    body {
+      @apply antialiased bg-black;
+    }
+  }
+  
+  @layer utilities {
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .animate-pulse-slow {
+      animation: pulse 3s ease-in-out infinite;
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .heart-bg {
+    background-image: radial-gradient(circle at center, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
+  }
   

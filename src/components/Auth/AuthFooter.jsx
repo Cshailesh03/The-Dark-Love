@@ -1,13 +1,20 @@
 import React from 'react';
 
-const AuthFooter = () => (
-  <div className="p-4 flex flex-col space-y-4">
-    <div className="text-sm text-gray-400 text-center">
-      By continuing, you agree to our{' '}
-      <a href="#" className="text-red-500 hover:underline">Terms of Service</a> and{' '}
-      <a href="#" className="text-red-500 hover:underline">Privacy Policy</a>.
+const AuthFooter = () => {
+  return (
+    <div className="text-center text-sm text-red-200/50">
+      <p>
+        By continuing, you agree to our{' '}
+        <a href="#" className="text-red-400 hover:text-red-300 transition-colors">
+          Terms of Service
+        </a>{' '}
+        and{' '}
+        <a href="#" className="text-red-400 hover:text-red-300 transition-colors">
+          Privacy Policy
+        </a>
+      </p>
     </div>
-  </div>
-);
+  );
+};
 
 export default AuthFooter;
